@@ -26,7 +26,7 @@ img {
 }
 
 body,
-input:not([type='submit']),
+input:not([type="submit"]),
 textarea {
   font-family: $f-body;
 }
@@ -43,7 +43,7 @@ body {
 a,
 .btn,
 button,
-input[type='submit'] {
+input[type="submit"] {
   cursor: pointer;
   padding: 0;
   border: none;
@@ -89,3 +89,48 @@ form {
 }
 
 // --- Project specific ---
+section {
+  @include general-responsivity(padding-top, 12.3rem);
+  @include general-responsivity(padding-bottom, 12.3rem);
+  padding-left: 0;
+  padding-right: 0;
+  @include portrait-responsivity(padding-top, 6.3rem);
+  @include portrait-responsivity(padding-bottom, 6.3rem);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+.btn {
+  border-style: solid;
+  border-color: $c-theme;
+  color: $c-theme;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+
+  &:hover,
+  &:focus {
+    color: $c-white;
+    border-color: $c-theme;
+    background-color: $c-theme;
+  }
+}
+
+strong {
+  font-weight: 900;
+}

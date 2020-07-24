@@ -4,9 +4,7 @@
 
   @if $exponent < 0 {
     @return $base;
-  }
-
-  @else if $exponent !=0 {
+  } @else if $exponent !=0 {
     @for $i from 0 to $exponent {
       $value: $value * $base;
     }
@@ -31,12 +29,16 @@
 }
 
 @function get-fluid-size($min-size-in-rems, $related-viewport-width-in-px) {
-  $result: (($min-size-in-rems / 1rem) / ($related-viewport-width-in-px / 1px) * 1000) * 1vw;
+  $result: (
+      ($min-size-in-rems / 1rem) / ($related-viewport-width-in-px / 1px) * 1000
+    ) * 1vw;
   @return floor-to-precision($result);
 }
 
 @function get-fluid-stop($size-fluid, $fluid-to-in-px) {
-  $fluid-stop: floor-to-precision((($fluid-to-in-px / 1px) * ($size-fluid / 1vw) / 1000) * 1rem);
+  $fluid-stop: floor-to-precision(
+    (($fluid-to-in-px / 1px) * ($size-fluid / 1vw) / 1000) * 1rem
+  );
   @return $fluid-stop;
 }
 
